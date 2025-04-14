@@ -1,0 +1,37 @@
+[repository]
+name = "leb"
+managed_by_uv = false
+changelog = "CHANGELOG.md"
+version = "version.txt"
+compose = "docker-compose.yml"
+
+[repository.towncrier]
+section = "Project"
+settings = "towncrier.toml"
+
+[backend]
+path = "backend"
+
+[backend.package]
+name = "leb"
+path = "backend"
+changelog = "backend/CHANGELOG.md"
+towncrier_settings = "backend/pyproject.toml"
+base_package = "Products.CMFPlone"
+publish = false
+
+[frontend]
+path = "frontend"
+
+[frontend.package]
+name = "volto-leb"
+path = "frontend/packages/volto-leb"
+changelog = "frontend/packages/volto-leb/CHANGELOG.md"
+towncrier_settings = "frontend/packages/volto-leb/towncrier.toml"
+base_package = "@plone/volto"
+publish = false
+
+[cookieplone]
+template = "project"
+template_version = "2d6ff9d35d1e95a7d0b93c4d821a90e04326bf19"
+generated_date = "2025-04-14 23:30:49"
